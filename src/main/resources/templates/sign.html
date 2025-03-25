@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/sign.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <img src="/images/logo.png" alt="logo" class="logo1" />
+        </div>
+        <div class="right-section">
+            <div class="top-section">
+                <p class="hi">EVENTIT MANENT</p>
+            </div>
+            <div class="bottom-section">
+                <fieldset class="set">
+                    <legend class="leg">Sign up</legend>
+                    <form action="/user/add" method="post" th:object="${sign}">
+                        <div class="input">
+                            <input class="user" type="text" th:field="*{username}" 
+                                   placeholder="Username" 
+                                   required 
+                                   minlength="3" 
+                                   maxlength="20" 
+                                   pattern="^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[@#$%^&+=_-]).*$"
+                                   title="Username must be 3-20 characters long and can only one contain letters, one numbers, and one special characters." />
+                            <!-- Display validation error for username -->
+                            <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" style="color: red;">Username can only contain letters, numbers, spaces, and special characters </p>
+                        </div>
+                        <br>
+                        <div class="input">
+                            <input class="users" type="text" placeholder="Full Name" required 
+                                minlength="10" 
+                                maxlength="50" 
+                                th:field="*{full_name}"
+                                pattern="^[a-zA-Z ]*$"
+                                title="Full name must be 10-50 characters long and can only contain letters and spaces." 
+                            />
+                            <p th:if="${#fields.hasErrors('full_name')}" th:errors="*{full_name}" style="color: red;">
+                                Full name must be 10-50 characters long and can only contain letters and spaces.
+                            </p>
+                        </div>
+
+                        <br>
+                        <div class="input">
+                            <input class="user1" type="email" 
+                                th:field="*{email}" 
+                                placeholder="Email" 
+                                required 
+                                minlength="10" 
+                                maxlength="70" 
+                                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]).{2,}$" 
+                                title="Email must be 10-70 characters long and in a valid format (e.g., user@example.com)" />
+                            <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;">
+                                Email must be 10-70 characters long and in a valid format (e.g., user@example.com).
+                            </p>
+                        </div>
+                        <br>
+                        <div class="input">
+                            <input class="pass" maxlength="30"  minlength="6" type="password" th:field="*{password}" 
+                            placeholder="Password" pattern="^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[@#$%^&+=_-]).*$"
+                            required title="Must at least one number,one letter and at least 6 characters."/>
+                            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red;">Password should
+                                contain at least one number, one letter, at least 6 characters and one special character.</p>
+                        </div>
+                        <div class="input">
+                            <button class="login" type="submit" name="signup">Sign up</button>
+                        </div>
+                        <div class="signup">
+                            <p class="red">Have an account? <a th:href="@{/login/}">Log in</a></p>
+                        </div>
+                    </form>
+                    <!-- Display validation or runtime error message -->
+                    <p th:if="${error}" th:text="${error}" style="color: red;"></p>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

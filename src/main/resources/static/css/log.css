@@ -1,0 +1,133 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+}
+
+.left-section{
+    width: 50%; /* Divide the page into two equal parts */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.right-section {
+    width: 50%; /* Divide the page into two equal parts */
+    display: flex;
+    flex-direction: column; /* Stack the top and bottom sections vertically */
+    text-align: center;
+}
+.logo1{
+    height:100%;
+    object-fit:cover;
+    width: 100%;
+}
+
+.left-section {
+    background-color:white; /* Light gray background */
+}
+
+.right-section {
+    background-color: white; /* Darker gray background */
+    display:flex;
+}
+.set {
+    height: 400px; /* Adjust height to fit content */
+    width: 70%; /* Adjust width as needed */
+    border-radius: 10px;
+    margin: 20px auto; /* Center the form horizontally */
+    border: 1px solid #ccc; /* Light border */
+    background-color: white; /* Ensure a white background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for the pop-out effect */
+    padding: 20px; /* Add padding inside the form */
+    transform: scale(1); /* Default scale */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+.set:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.top-section {
+     /* Take up half the height of the right section */
+    display: flex;
+    width:100%;
+    height:60px;
+    padding:10px 10px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+.bottom-section {
+    flex: 1; /* Take up the other half of the height */
+    display: flex;
+    width:100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.user,.pass::placeholder{
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.user,.pass{
+    box-sizing:border-box;
+    border-radius: 15px;
+    height: 30px;
+    width: 300px;
+    border:1px solid;
+    border-color:whitesmoke;
+}
+
+.login{
+    margin-top:8px;
+    border-radius: 10px;
+    width:65px;
+    height:25px;
+    border: none;
+    color:blue;
+}
+
+.user{
+    margin-top: 78px;
+
+}
+
+.leg{
+    font-size:medium;
+    font-weight: bold;
+    font-style: italic;
+    color: black;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 20px;
+}
+
+.red
+{
+    color:black;
+    font-size:medium;
+    font-family:'Courier New', Courier, monospace;
+    margin-top:7px;
+}
+
+.hi{
+    font-size:44px;
+    color:black;
+    font-family:'Courier New', Courier, monospace;
+    margin-top:10px;
+}

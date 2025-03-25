@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Verify</title>
+    <link rel="stylesheet" href="/css/log.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <img src="/images/logo.png" alt="logo" class="logo1" />
+        </div>
+        <div class="right-section">
+            <div class="top-section">
+                <p class="hi">EVENTIT MANENT</p>
+            </div>
+            <div class="bottom-section">
+                <fieldset class="set">
+                    <legend class="leg">Verify OTP</legend>
+                    <!-- Display error message -->
+                    <p th:if="${error}" th:text="${error}" style="color: red;"></p>
+                    <form action="/otp/verify" method="POST">
+                        <input type="hidden" name="username" th:value="${username}" />
+                        <div class="input">
+                            <input class="user" type="text" name="otp" placeholder="Enter OTP" required />
+                        </div>
+                        <br>
+                        <div class="input">
+                            <button class="login" type="submit">Verify</button>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

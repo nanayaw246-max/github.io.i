@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/log.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <img src="/images/logo.png" alt="logo" class="logo1" />
+        </div>
+        <div class="right-section">
+            <div class="top-section">
+                <p class="hi">EVENTIT MANENT</p>
+            </div>
+            <div class="bottom-section">
+                <fieldset class="set">
+                    <legend class="leg">Login</legend>
+                    <!-- Display error message -->
+                    <p th:if="${error}" th:text="${error}" style="color: red;"></p>
+                    <form action="/login/log" method="POST" th:object="${log}">
+                        <div class="input">
+                            <input class="user" type="text" th:field="*{username}" placeholder="Username" required 
+                            pattern="[A-Za-z0-9!@#$%^&*()_+~`|}{[\]:;'<>,.?/\\=-]+" title="Only letters, numbers, and symbols." />
+                        </div>
+                        <br>
+                        <div class="input">
+                            <input class="pass" type="password" th:field="*{password}" placeholder="Password" required />
+                        </div>
+                        <div class="input">
+                            <button class="login" type="submit" name="login">Login</button>
+                        </div>
+                    </form>
+                    <div class="signup">
+                        <p class="red">Don't have an account? <a th:href="@{/user/}">Sign up</a></p>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

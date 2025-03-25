@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Sign In</title>
+
+</head>
+
+<body>
+    <h1>Spring Boot Thymeleaf Example</h1>
+    <p th:text="${message}">Hello, World!</p>
+    <form action="/user/add" method="post">
+
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Username" required />
+        </div>
+
+        <div>
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="first_name" placeholder="Enter first name" required />
+        </div>
+
+        <div>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="last_name" placeholder="Enter last name" required />
+        </div>
+
+        <div>
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="email" placeholder="nanayaw246@icloud.com" required />
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required />
+        </div>
+
+        <div>
+            <label for="Mobile">Number:</label>
+            <input type="tel" id="Mobile" name="phone" placeholder="(233) 243858373" required />
+        </div>
+
+        <div>
+            <label for="cpass">Confirm Password:</label>
+            <input type="password" id="cpass" name="confirm_password" placeholder="Confirm password" required />
+        </div>
+
+        <div>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="City eg.New York" required />
+        </div>
+
+        <div>
+            <input type="submit" />
+        </div>
+
+        <div>
+            <input type="reset" />
+        </div>
+
+    </form>
+
+</body>
+
+</html>
