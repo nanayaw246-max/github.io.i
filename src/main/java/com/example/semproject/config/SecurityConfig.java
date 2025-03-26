@@ -43,7 +43,7 @@ public class SecurityConfig {
     public CorsFilter corsFilter() {
         logger.debug("Configuring CORS filter");
         CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.addAllowedOrigin("https://<your-frontend-domain>.github.io"); // Replace with your frontend's GitHub Pages URL
+        corsConfiguration.addAllowedOrigin("nanayaw246-max/nanayaw24.github.io"); // Replace with your frontend's GitHub Pages URL
         corsConfiguration.addAllowedMethod("*");
         corsConfiguration.addAllowedHeader("*");
         corsConfiguration.setAllowCredentials(true);
